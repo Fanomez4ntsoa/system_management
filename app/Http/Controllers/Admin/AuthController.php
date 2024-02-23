@@ -44,7 +44,7 @@ class AuthController extends Controller
         );
 
         if(Auth::attempt($credentials)) {
-            return redirect()->route('welcome');
+            return redirect()->route('dashboard');
         }
 
         return redirect()->route('login')->with(

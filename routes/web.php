@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AuthController;
+use App\Http\Controllers\Members\MembersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,8 +22,13 @@ Route::get('/', function () {
 
 $router->group(['prefix' => 'auth'], function($router) {
     $router->get('/login', [AuthController::class, 'showLogin']);
-    $router->post('/login', [AuthController::class, 'login'])->name('login');
-    $router->get('/register', [AuthController::class, 'register'])->name('register');
+    $router->post('/login', [AuthController::class, 'login'])->name('login.post');
+    $router->get('/register', [AdminController::class, 'showRegister'])->name('register');
+    $router->post('/register', [AdminController::class, 'create'])->name('register.post');
+});
+
+$router->group(['prefix' => 'dashboard'], function($router) {
+    $router->get('/', [MembersController::class, 'index'])->name('dashboard');
 });
 
 // Route::prefix('/login', [AuthController::class, 'showLogin'])->name('login');

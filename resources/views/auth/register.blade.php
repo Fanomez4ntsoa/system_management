@@ -18,21 +18,22 @@
                     <div class="authentification-card" style="border-radius: 15px;">
                         <div class="authentification-card-body">
                             <h2 class="authentification-register-title">CRÉATION D'UN COMPTE</h2>
-                            <form>
+                            <form action="{{ route('register.post') }}" method="POST">
+                                @csrf
                                 <div class="authentification-form-outline">
-                                    <input type="text" id="" class="authentification-form-control" placeholder="Entrez votre Nom"/>
+                                    <input type="text" name="firstname" class="authentification-form-control" placeholder="Entrez votre Nom"/>
                                 </div>
                                 <div class="authentification-form-outline">
-                                    <input type="text" id="" class="authentification-form-control" placeholder="Entrez votre Prénom"/>
+                                    <input type="text" name="lastname" class="authentification-form-control" placeholder="Entrez votre Prénom"/>
                                 </div>
                                 <div class="authentification-form-outline">
-                                    <input type="email" id="" class="authentification-form-control" placeholder="Entrez votre Adresse Email" />
+                                    <input type="email" name="email" class="authentification-form-control" placeholder="Entrez votre Adresse Email" />
                                 </div>
                                 <div class="authentification-form-outline">
-                                    <input type="password" id="" class="authentification-form-control" placeholder="Entrez votre Mot de Passe" />
+                                    <input type="password" name="password" class="authentification-form-control" placeholder="Entrez votre Mot de Passe" />
                                 </div>
                                 <div class="authentification-form-outline">
-                                    <input type="password" id="" class="authentification-form-control" placeholder="Confirmez votre Mot de Passe" />
+                                    <input type="password" name="confirm_password" class="authentification-form-control" placeholder="Confirmez votre Mot de Passe" />
                                 </div>
                                 <div class="authentification-form-terms">
                                     <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" />
@@ -41,7 +42,7 @@
                                         </label>
                                 </div>
                                 <div class="authentification-button">
-                                    <button type="button"
+                                    <button type="submit"
                                         class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">S'inscrire</button>
                                 </div>
                                 <p class="authentification-login-text">Vous avez déjà un compte ? 

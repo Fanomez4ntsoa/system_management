@@ -19,15 +19,16 @@
                             <div class="authentification-card-body">
                                 <h2 class="authentification-title">SE CONNECTER</h2>
                                 <p class="authentification-title-text">Veuillez saisir votre adresse email et votre mot de passe !</p>
-                                <form>
+                                <form action="{{ route('login.post') }}" method="POST">
+                                    @csrf
                                     <div class="authentification-form-outline">
-                                        <input type="email" id="" class="authentification-form-control" placeholder="Entrez votre Adresse Email" />
+                                        <input type="email" name="email" class="authentification-form-control" placeholder="Entrez votre Adresse Email" />
                                     </div>
                                     <div class="authentification-form-outline">
-                                        <input type="password" id="" class="authentification-form-control" placeholder="Entrez votre Mot de Passe" />
+                                        <input type="password" name="password" class="authentification-form-control" placeholder="Entrez votre Mot de Passe" />
                                     </div>
                                     <div class="authentification-button">
-                                        <button type="button"
+                                        <button type="submit"
                                             class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Se connecter</button>
                                     </div>
                                     <p class="authentification-login-text">Vous n'avez pas encore de compte ? 

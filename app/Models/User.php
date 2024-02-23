@@ -35,6 +35,13 @@ class User extends Authenticatable
     ];
 
     /**
+     * Model not timestamped.
+     *
+     * @var boolean
+     */
+    public $timestamps = false;
+    
+    /**
      * The attributes that should be cast.
      *
      * @var array<string, string>
