@@ -23,6 +23,9 @@
                                     <input type="text" id="" class="authentification-form-control" placeholder="Entrez votre Nom"/>
                                 </div>
                                 <div class="authentification-form-outline">
+                                    <input type="text" id="" class="authentification-form-control" placeholder="Entrez votre Prénom"/>
+                                </div>
+                                <div class="authentification-form-outline">
                                     <input type="email" id="" class="authentification-form-control" placeholder="Entrez votre Adresse Email" />
                                 </div>
                                 <div class="authentification-form-outline">
